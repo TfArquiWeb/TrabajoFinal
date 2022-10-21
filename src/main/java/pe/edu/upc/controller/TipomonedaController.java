@@ -16,14 +16,14 @@ import pe.edu.upc.serviceimpl.TipomonedaImpl;
 @RequestMapping("/Tipomoneda")
 public class TipomonedaController {
 	@Autowired
-    private TipomonedaImpl tService;
+    private TipomonedaImpl tmService;
 
     @PostMapping
     public void registrar(@RequestBody tipomoneda t) {
-        tService.insert(t);
+        tmService.insert(t);
     }
     @GetMapping
     public List<tipomoneda> listar() {
-        return tService.list();
+        return tmService.list();
     }
 }
