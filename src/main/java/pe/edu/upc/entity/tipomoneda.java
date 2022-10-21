@@ -1,0 +1,39 @@
+package pe.edu.upc.entity;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+@Entity
+@Table(name = "tipomoneda")
+public class tipomoneda {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(name = "TipodeMoneda", nullable = false, length = 45)
+	private String TipodeMoneda;
+	public tipomoneda() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public tipomoneda(Long id, String tipodeMoneda) {
+		super();
+		this.id = id;
+		TipodeMoneda = tipodeMoneda;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getTipodeMoneda() {
+		return TipodeMoneda;
+	}
+	public void setTipodeMoneda(String tipodeMoneda) {
+		TipodeMoneda = tipodeMoneda;
+	}
+	
+}
