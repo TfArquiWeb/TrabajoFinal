@@ -15,14 +15,14 @@ import pe.edu.upc.serviceimpl.ExperienciaImpl;
 @RequestMapping("/Experiencia")
 public class ExperienciaController {
 	 @Autowired
-	    private ExperienciaImpl eService;
+	    private ExperienciaImpl expService;
 
 	    @PostMapping
 	    public void registrar(@RequestBody experiencia e) {
-	        eService.insert(e);
+			expService.insert(e);
 	    }
 	    @GetMapping
 	    public List<experiencia> listar() {
-	        return eService.list();
+	        return expService.list();
 	    }
 }
