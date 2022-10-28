@@ -16,7 +16,7 @@ public class UsuarioImpl implements IUsuarioIntefaces{
 	@Override
 	public void insert(usuario u) {
 		// TODO Auto-generated method stub
-		
+
 		uR.save(u);
 	}
 
@@ -26,4 +26,16 @@ public class UsuarioImpl implements IUsuarioIntefaces{
 		return uR.findAll();
 	}
 
+	@Override
+	public void delet(int id) {
+		uR.deleteById(id);
+
+	}
+
+	@Override
+	public List<usuario> search(String nombreUsuario) {
+		return uR.BuscarNombre(nombreUsuario);
+	}
+
 }
+
