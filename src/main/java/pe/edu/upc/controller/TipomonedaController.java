@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import pe.edu.upc.entity.tipomoneda;
-import pe.edu.upc.serviceimpl.TipomonedaImpl;
+import pe.edu.upc.serviceinterfeaces.ITipomonedaInterfaces;
 
 @RestController
 @RequestMapping("/Tipomoneda")
 public class TipomonedaController {
 	@Autowired
-    private TipomonedaImpl tmService;
+    private ITipomonedaInterfaces tmService;
 
     @PostMapping
     public void registrar(@RequestBody tipomoneda t) {
@@ -30,5 +30,10 @@ public class TipomonedaController {
     @PutMapping
     public void modificar(@RequestBody tipomoneda t) {
         tmService.insert(t);
+    }
+
+    @PostMapping("/buscar")
+    public List<tipomoneda> buscar(@RequestBody tipomoneda t){
+        return tmService.search(t.getTipodeMoneda());
     }
 }
