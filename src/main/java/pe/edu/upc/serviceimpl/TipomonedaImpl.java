@@ -24,4 +24,14 @@ public class TipomonedaImpl implements ITipomonedaInterfaces{
 		return tR.findAll();
 	}
 
+	@Override
+	public void delete(int idTipoMoneda) {
+		// TODO Auto-generated method stub
+		tR.deleteById(idTipoMoneda);
+	}
+
+	@Override
+	public List<tipomoneda> search(String tipodemoneda){
+		return tR.buscarNombre(tipodemoneda);
+	}
 }

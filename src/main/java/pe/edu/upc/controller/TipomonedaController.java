@@ -1,13 +1,10 @@
 package pe.edu.upc.controller;
 
+import java.security.Provider;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import pe.edu.upc.entity.tipomoneda;
 import pe.edu.upc.serviceimpl.TipomonedaImpl;
@@ -25,5 +22,13 @@ public class TipomonedaController {
     @GetMapping
     public List<tipomoneda> listar() {
         return tmService.list();
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        tmService.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody tipomoneda t) {
+        tmService.insert(t);
     }
 }
