@@ -26,4 +26,16 @@ public class UsuarioImpl implements IUsuarioIntefaces{
 		return uR.findAll();
 	}
 
+	@Override
+	public void delet(int id) {
+		// TODO Auto-generated method stub
+		uR.deleteById(id);
+	}
+
+	@Override
+	public List<usuario> search(String nombreUsuario) {
+		// TODO Auto-generated method stub
+		return uR.BuscarNombre(nombreUsuario);
+	}
+
 }

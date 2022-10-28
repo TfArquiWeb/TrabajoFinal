@@ -3,8 +3,11 @@ package pe.edu.upc.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,5 +27,17 @@ public class UsuarioController {
     @GetMapping
     public List<usuario> listar() {
         return uService.list();
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        uService.delet(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody usuario u) {
+        uService.insert(u);
+    }
+    @PostMapping("/buscar")
+    public List<usuario> Buscar(@RequestBody usuario u ) {
+        return uService.search(u.getNombreUsuario());
     }
 }
