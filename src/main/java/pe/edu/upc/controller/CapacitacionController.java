@@ -1,31 +1,35 @@
 package pe.edu.upc.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.entity.Capacitacion;
+import pe.edu.upc.serviceimpl.CapacitacionServiceImpl;
 
-import pe.edu.upc.entity.capacitacion;
-import pe.edu.upc.serviceimpl.CapacitacionImpl;
-
+import java.util.List;
 @RestController
-@RequestMapping("/Capacitacion")
-
+@RequestMapping("/capacitaciones")
 public class CapacitacionController {
+    @Autowired
+    private CapacitacionServiceImpl cService;
 
-	@Autowired
-	private CapacitacionImpl cService;
-	
-	@PostMapping
-    public void registrar(@RequestBody capacitacion c) {
-		cService.insert(c);
-	}
-	@GetMapping
-	public List<capacitacion> listar(){
-		return cService.list();
-	}
+    @PostMapping
+    public void registrar(@RequestBody Capacitacion c) {
+        cService.insert(c);
+    }
+    @GetMapping
+    public List<Capacitacion> listar() {
+        return cService.list();
+    }
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        cService.delete(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody Capacitacion c) {
+        cService.insert(c);
+    }
+    @PostMapping("/buscar")
+    public List<Capacitacion> Buscar(@RequestBody Capacitacion c ) {
+        return cService.search(c.getDescCapacitacion());
+    }
 }
