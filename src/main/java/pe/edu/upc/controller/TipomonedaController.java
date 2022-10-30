@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.entity.tipomoneda;
 import pe.edu.upc.serviceinterfeaces.ITipomonedaInterfaces;
 
+import java.text.ParseException;
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/Tipomoneda")
 public class TipomonedaController {
@@ -35,5 +39,9 @@ public class TipomonedaController {
     @PostMapping("/buscar")
     public List<tipomoneda> buscar(@RequestBody tipomoneda t){
         return tmService.search(t.getTipodeMoneda());
+    }
+    @GetMapping("/{id}")
+    public Optional<tipomoneda> listarId(@PathVariable("id") Integer id){
+        return tmService.listarId(id);
     }
 }

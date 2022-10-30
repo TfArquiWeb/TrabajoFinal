@@ -1,6 +1,7 @@
 package pe.edu.upc.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -28,6 +29,11 @@ public class TipomonedaImpl implements ITipomonedaInterfaces{
 	public void delete(int idTipoMoneda) {
 		// TODO Auto-generated method stub
 		tR.deleteById(idTipoMoneda);
+	}
+
+	@Override
+	public Optional<tipomoneda> listarId(int id) {
+		return tR.findById(id);
 	}
 
 	@Override
