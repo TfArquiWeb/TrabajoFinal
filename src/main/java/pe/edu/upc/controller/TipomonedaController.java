@@ -9,7 +9,7 @@ import pe.edu.upc.entity.tipomoneda;
 import pe.edu.upc.serviceimpl.TipomonedaImpl;
 
 @RestController
-@RequestMapping("/Tipomoneda")
+@RequestMapping("/TipoMoneda")
 public class TipomonedaController {
 	@Autowired
     private TipomonedaImpl tmService;
@@ -31,7 +31,7 @@ public class TipomonedaController {
         tmService.insert(t);
     }
 
-    @PostMapping("/buscar")
+    @PostMapping("Evaluacion/Buscar")
     public List<tipomoneda> buscar(@RequestBody tipomoneda t){
         return tmService.search(t.getTipodeMoneda());
     }
