@@ -18,6 +18,7 @@ import pe.edu.upc.serviceimpl.ContadorImpl;
 @RestController
 @RequestMapping("/Contador")
 public class ContadorController {
+	
 	@Autowired
 	private ContadorImpl cService;
 	@PostMapping
@@ -28,9 +29,9 @@ public class ContadorController {
     public List<contador> listar() {
         return cService.list();
     }
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer id){
-        cService.delet(id);
+    @DeleteMapping("/{idcontador}")
+    public void eliminar(@PathVariable("idcontador") Integer idcontador){
+        cService.delet(idcontador);
     }
     @PutMapping
     public void modificar(@RequestBody contador c) {
