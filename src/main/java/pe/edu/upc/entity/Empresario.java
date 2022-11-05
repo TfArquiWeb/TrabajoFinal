@@ -18,56 +18,65 @@ public class Empresario {
     @Column(name = "razonEmpresario", length = 60, nullable = false)
     private String razonEmpresario;
 
-    @Column(name = "rucEmpresario")
+    @Column(name = "rucEmpresario", length = 60, nullable = false)
     @JsonSerialize(using = ToStringSerializer.class)
     private int rucEmpresario;
 
-    @Column(name = "rubroEmpresario")
+    @Column(name = "rubroEmpresario", length = 60, nullable = false)
     @JsonSerialize(using = ToStringSerializer.class)
     private String rubroEmpresario;
 
-    @Column(name = "descEmpresario")
+    @Column(name = "descEmpresario", length = 60, nullable = false)
     @JsonSerialize(using = ToStringSerializer.class)
-    private int descEmpresario;
+    private String descEmpresario;
 
     @ManyToOne
-    @JoinColumn(name = "idEmpresario", nullable = false)
-    private Empresario empresario;
+    @JoinColumn(name = "id", nullable = false)
+    private usuario usuario;
 
-    public Vehiculo(int idVehiculo, String licensePlateVehiculo, LocalDate manufacturingDateVehiculo, Propietario propietario) {
-        this.idVehiculo = idVehiculo;
-        this.licensePlateVehiculo = licensePlateVehiculo;
-        this.manufacturingDateVehiculo = manufacturingDateVehiculo;
-        this.propietario = propietario;
+    public Empresario(int idEmpresario, String razonEmpresario, int rucEmpresario, String rubroEmpresario, String descEmpresario, usuario usuario) {
+        this.idEmpresario = idEmpresario;
+        this.razonEmpresario = razonEmpresario;
+        this.rucEmpresario = rucEmpresario;
+        this.rubroEmpresario = rubroEmpresario;
+        this.descEmpresario= descEmpresario;
+        this.usuario=usuario;
     }
 
-    public Vehiculo() {
+    public Empresario() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-    public int getIdVehiculo() {
-        return idVehiculo;
+    public int getIdEmpresario() {
+        return idEmpresario;
     }
 
-    public void setIdVehiculo(int idVehiculo) {
-        this.idVehiculo = idVehiculo;
+    public void setIdEmpresario(int idEmpresario) {
+        this.idEmpresario = idEmpresario;
     }
 
-    public String getLicensePlateVehiculo() {
-        return licensePlateVehiculo;
+    public String getRazonEmpresario() {
+        return razonEmpresario;
     }
 
-    public void setLicensePlateVehiculo(String licensePlateVehiculo) {
-        this.licensePlateVehiculo = licensePlateVehiculo;
+    public void setRazonEmpresario(String razonEmpresario) {
+        this.razonEmpresario = razonEmpresario;
     }
 
-    public LocalDate getManufacturingDateVehiculo() {
-        return manufacturingDateVehiculo;
+    public int getRucEmpresario() {
+        return rucEmpresario;
     }
 
-    public void setManufacturingDateVehiculo(LocalDate manufacturingDateVehiculo) {
-        this.manufacturingDateVehiculo = manufacturingDateVehiculo;
+    public void setRucEmpresario(int rucEmpresario) {
+        this.rucEmpresario = rucEmpresario;
+    }
+    public String getRubroEmpresario() {
+        return razonEmpresario;
+    }
+
+    public void setRubroEmpresario(String razonEmpresario) {
+        this.razonEmpresario = razonEmpresario;
     }
 
     public Propietario getPropietario() {

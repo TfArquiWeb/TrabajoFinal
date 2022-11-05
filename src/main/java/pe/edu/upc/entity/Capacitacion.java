@@ -22,8 +22,8 @@ public class Capacitacion {
         return id;
     }
 
-    public void setIdCapacitacion(int idPropietario) {
-        this.id = idPropietario;
+    public void setIdCapacitacion(int idCapacitacion) {
+        this.id = idCapacitacion;
     }
 
     public String getDescCapacitacion() {
