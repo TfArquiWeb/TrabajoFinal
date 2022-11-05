@@ -7,7 +7,7 @@ import pe.edu.upc.serviceimpl.CapacitacionServiceImpl;
 
 import java.util.List;
 @RestController
-@RequestMapping("/capacitaciones")
+@RequestMapping("/Capacitacion")
 public class CapacitacionController {
     @Autowired
     private CapacitacionServiceImpl cService;
@@ -20,7 +20,7 @@ public class CapacitacionController {
     public List<Capacitacion> listar() {
         return cService.list();
     }
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void eliminar(@PathVariable("id") Integer id){
         cService.delete(id);
     }

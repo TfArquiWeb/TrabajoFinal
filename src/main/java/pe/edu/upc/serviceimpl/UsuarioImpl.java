@@ -34,7 +34,7 @@ public class UsuarioImpl implements IUsuarioIntefaces{
 
 	@Override
 	public List<usuario> search(String nombreUsuario) {
-		return uR.BuscarNombre(nombreUsuario);
+		return uR.BuscarNonbre(nombreUsuario);
 	}
 
 }

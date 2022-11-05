@@ -13,7 +13,7 @@ public class tipopago {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "Tipopago", nullable = false, length = 45)
+	@Column(name = "tipopago")
 	private String Tipopago;
 	public tipopago() {
 		super();
