@@ -13,7 +13,7 @@ public class experiencia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "descExperiencia", nullable = false, length = 45)
+	@Column(name = "descExperiencia", length = 45, nullable = false)
 	private String descExperiencia;
 	public experiencia() {
 		super();
