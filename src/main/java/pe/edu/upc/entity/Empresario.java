@@ -57,32 +57,28 @@ public class Empresario {
         return razonEmpresario;
     }
 
-    public void setRazonEmpresario(String razonEmpresario) {
-        this.razonEmpresario = razonEmpresario;
-    }
+    public void setRazonEmpresario(String razonEmpresario) {this.razonEmpresario = razonEmpresario;}
 
     public int getRucEmpresario() {
         return rucEmpresario;
     }
 
-    public void setRucEmpresario(int rucEmpresario) {
-        this.rucEmpresario = rucEmpresario;
-    }
-    public String getRubroEmpresario() {
-        return razonEmpresario;
+    public void setRucEmpresario(int rucEmpresario) {this.rucEmpresario = rucEmpresario;}
+    public String getRubroEmpresario() {return razonEmpresario;}
+
+    public void setRubroEmpresario(String razonEmpresario) {this.razonEmpresario = razonEmpresario;}
+
+    public String getDescEmpresario() {return descEmpresario;}
+
+    public void setDescEmpresario(String descEmpresario) {this.descEmpresario = descEmpresario;}
+
+    public usuario getUsuario() {
+        return usuario;
     }
 
-    public void setRubroEmpresario(String razonEmpresario) {
-        this.razonEmpresario = razonEmpresario;
-    }
-
-    public Propietario getPropietario() {
-        return propietario;
-    }
-
-    public void setPropietario(Propietario propietario) {
-        this.propietario = propietario;
+    public void setUsuario(usuario usuario) {
+        this.usuario = usuario;
     }
 
 }
-}
+

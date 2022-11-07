@@ -1,0 +1,64 @@
+package pe.edu.upc.serviceimpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RestController;
+import pe.edu.upc.entity.Empresario;
+import pe.edu.upc.repository.IEmpresarioRepository;
+import pe.edu.upc.serviceinterfeaces.IEmpresarioService;
+
+import javax.transaction.Transactional;
+import java.util.List;
+import java.util.Optional;
+
+@RestController
+public class EmpresarioServiceImpl implements IEmpresarioService {
+    @Autowired
+    private IEmpresarioRepository dEmpresario;
+
+    @Override
+    @Transactional
+    public boolean insertar(Empresario empresario) {
+        Empresario objEmpresario = dEmpresario.save(empresario);
+        if (objEmpresario == null) {
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    @Override
+    @Transactional
+    public void eliminar(int idEmpresario) {
+
+        dEmpresario.deleteById(idEmpresario);
+
+    }
+
+    @Override
+    public Optional<Empresario> listarId(int idEmpresario) {
+
+        return dEmpresario.findById(idEmpresario);
+    }
+
+    @Override
+    public List<Empresario> listar() {
+        return dEmpresario.findAll();
+    }
+
+    @Override
+    public List<Empresario> buscarUsuario(String nombreUsuario) {
+        return dEmpresario.buscarUsuario(nombreUsuario);
+    }
+
+    @Override
+    public List<Empresario> buscarEmpresario(String razonEmpresario) {
+        return dEmpresario.buscarEmpresario(razonEmpresario);
+    }
+
+    @Override
+    public List<Empresario> findByRuc(int rucEmpresario) {
+        return dEmpresario.findByRuc(rucEmpresario);
+    }
+
+
+}

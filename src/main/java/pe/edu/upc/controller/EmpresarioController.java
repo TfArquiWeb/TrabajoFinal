@@ -1,8 +1,13 @@
 package pe.edu.upc.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+import pe.edu.upc.entity.Empresario;
+import pe.edu.upc.serviceinterfeaces.IEmpresarioService;
+
+import java.text.ParseException;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/empresarios")
@@ -11,40 +16,39 @@ public class EmpresarioController {
 private IEmpresarioService empService;
 
     @PostMapping
-    public void registrar(@RequestBody Vehiculo v) {
-        vService.insertar(v);
+    public void registrar(@RequestBody Empresario emp) {empService.insertar(emp);
     }
 
     @PutMapping
-    public void modificar(@RequestBody Vehiculo v) {
-        vService.insertar(v);
+    public void modificar(@RequestBody Empresario emp) {
+        empService.insertar(emp);
     }
 
     @DeleteMapping("/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
-        vService.eliminar(id);
+        empService.eliminar(id);
     }
 
     @GetMapping
-    public List<Vehiculo> listar() {
-        return vService.listar();
+    public List<Empresario> listar() {
+        return empService.listar();
 
     }
 
     @PostMapping("/buscar")
-    public List<Vehiculo> buscar(@RequestBody Vehiculo v) throws ParseException {
+    public List<Empresario> buscar(@RequestBody Empresario emp) throws ParseException {
 
-        List<Vehiculo> listaVehiculos;
-        listaVehiculos = vService.buscarVehiculo(v.getLicensePlateVehiculo());
-        if (listaVehiculos.isEmpty()) {
+        List<Empresario> listaEmpresarios;
+        listaEmpresarios = empService.buscarEmpresario(emp.getRazonEmpresario());
+        if (listaEmpresarios.isEmpty()) {
 
-            listaVehiculos = vService.buscarPropietario(v.getPropietario().getNamePropietario());
+            listaEmpresarios = empService.buscarEmpresario(emp.getUsuario().getNombreUsuario());
         }
-        return listaVehiculos;
+        return listaEmpresarios;
 
     }
     @GetMapping("/{id}")
-    public Optional<Vehiculo> listarId(@PathVariable("id") Integer id) {
-        return vService.listarId(id);
+    public Optional<Empresario> listarId(@PathVariable("id") Integer id) {
+        return empService.listarId(id);
     }
 }
