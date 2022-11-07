@@ -12,16 +12,16 @@ public class Empresario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int ide;
 
-    @Column(name = "razonEmpresario", length = 60)
+    @Column(name = "razonEmpresario", length = 60, nullable = false)
     private String razonEmpresario;
 
-    @Column(name = "rucEmpresario", length = 12)
+    @Column(name = "rucEmpresario", length = 12, nullable = false)
     private int rucEmpresario;
 
-    @Column(name = "rubroEmpresario", length = 100)
+    @Column(name = "rubroEmpresario", length = 100, nullable = false)
     private String rubroEmpresario;
 
-    @Column(name = "descEmpresario", length = 100)
+    @Column(name = "descEmpresario", length = 100, nullable = false)
     private String descEmpresario;
 
     @ManyToOne
