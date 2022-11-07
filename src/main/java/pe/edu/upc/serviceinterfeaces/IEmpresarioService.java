@@ -8,9 +8,9 @@ import pe.edu.upc.entity.Empresario;
 public interface IEmpresarioService {
     public boolean insertar(Empresario empresario);
 
-    public void eliminar(int idEmpresario);
+    public void eliminar(int ide);
 
-    Optional<Empresario> listarId(int id);
+    Optional<Empresario> listarId(int ide);
 
     List<Empresario> listar();
 

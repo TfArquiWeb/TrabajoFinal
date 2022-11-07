@@ -25,8 +25,8 @@ public class EmpresarioController {
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer id) {
-        empService.eliminar(id);
+    public void eliminar(@PathVariable("id") Integer ide) {
+        empService.eliminar(ide);
     }
 
     @GetMapping
@@ -48,7 +48,7 @@ public class EmpresarioController {
 
     }
     @GetMapping("/{id}")
-    public Optional<Empresario> listarId(@PathVariable("id") Integer id) {
-        return empService.listarId(id);
+    public Optional<Empresario> listarId(@PathVariable("id") Integer ide) {
+        return empService.listarId(ide);
     }
 }

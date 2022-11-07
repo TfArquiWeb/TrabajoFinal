@@ -10,7 +10,7 @@ public class Empresario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int ide;
 
     @Column(name = "razonEmpresario", length = 60)
     private String razonEmpresario;
@@ -28,8 +28,8 @@ public class Empresario {
     @JoinColumn(name = "id", nullable = false)
     private usuario usuario;
 
-    public Empresario(int id, String razonEmpresario, int rucEmpresario, String rubroEmpresario, String descEmpresario, usuario usuario) {
-        this.id = id;
+    public Empresario(int ide, String razonEmpresario, int rucEmpresario, String rubroEmpresario, String descEmpresario, usuario usuario) {
+        this.ide = ide;
         this.razonEmpresario = razonEmpresario;
         this.rucEmpresario = rucEmpresario;
         this.rubroEmpresario = rubroEmpresario;
@@ -43,11 +43,11 @@ public class Empresario {
     }
 
     public int getIdEmpresario() {
-        return id;
+        return ide;
     }
 
-    public void setIdEmpresario(int id) {
-        this.id = id;
+    public void setIdEmpresario(int ide) {
+        this.ide = ide;
     }
 
     public String getRazonEmpresario() {

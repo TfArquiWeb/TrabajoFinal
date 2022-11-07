@@ -35,9 +35,9 @@ public class EmpresarioServiceImpl implements IEmpresarioService {
     }
 
     @Override
-    public Optional<Empresario> listarId(int id) {
+    public Optional<Empresario> listarId(int ide) {
 
-        return dEmpresario.findById(id);
+        return dEmpresario.findById(ide);
     }
 
     @Override
