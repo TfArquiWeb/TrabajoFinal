@@ -10,7 +10,7 @@ public interface IEmpresarioService {
 
     public void eliminar(int idEmpresario);
 
-    Optional<Empresario> listarId(int idEmpresario);
+    Optional<Empresario> listarId(int id);
 
     List<Empresario> listar();
 

@@ -28,16 +28,16 @@ public class EmpresarioServiceImpl implements IEmpresarioService {
 
     @Override
     @Transactional
-    public void eliminar(int idEmpresario) {
+    public void eliminar(int id) {
 
-        dEmpresario.deleteById(idEmpresario);
+        dEmpresario.deleteById(id);
 
     }
 
     @Override
-    public Optional<Empresario> listarId(int idEmpresario) {
+    public Optional<Empresario> listarId(int id) {
 
-        return dEmpresario.findById(idEmpresario);
+        return dEmpresario.findById(id);
     }
 
     @Override

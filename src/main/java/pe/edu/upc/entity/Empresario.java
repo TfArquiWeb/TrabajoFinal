@@ -10,26 +10,26 @@ public class Empresario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEmpresario;
+    private int id;
 
-    @Column(name = "razonEmpresario", length = 60, nullable = false)
+    @Column(name = "razonEmpresario", length = 60)
     private String razonEmpresario;
 
-    @Column(name = "rucEmpresario", length = 12, nullable = false)
+    @Column(name = "rucEmpresario", length = 12)
     private int rucEmpresario;
 
-    @Column(name = "rubroEmpresario", length = 100, nullable = false)
+    @Column(name = "rubroEmpresario", length = 100)
     private String rubroEmpresario;
 
-    @Column(name = "descEmpresario", length = 100, nullable = false)
+    @Column(name = "descEmpresario", length = 100)
     private String descEmpresario;
 
     @ManyToOne
     @JoinColumn(name = "id", nullable = false)
     private usuario usuario;
 
-    public Empresario(int idEmpresario, String razonEmpresario, int rucEmpresario, String rubroEmpresario, String descEmpresario, usuario usuario) {
-        this.idEmpresario = idEmpresario;
+    public Empresario(int id, String razonEmpresario, int rucEmpresario, String rubroEmpresario, String descEmpresario, usuario usuario) {
+        this.id = id;
         this.razonEmpresario = razonEmpresario;
         this.rucEmpresario = rucEmpresario;
         this.rubroEmpresario = rubroEmpresario;
@@ -43,11 +43,11 @@ public class Empresario {
     }
 
     public int getIdEmpresario() {
-        return idEmpresario;
+        return id;
     }
 
-    public void setIdEmpresario(int idEmpresario) {
-        this.idEmpresario = idEmpresario;
+    public void setIdEmpresario(int id) {
+        this.id = id;
     }
 
     public String getRazonEmpresario() {
