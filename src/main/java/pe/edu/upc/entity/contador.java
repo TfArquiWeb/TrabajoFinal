@@ -23,20 +23,20 @@ public class contador {
 	private String linkedinContador;
 	
 	@ManyToOne
-	@JoinColumn(name = "usuario", nullable = false)
-	private usuario usuario;
+	@JoinColumn(name = "Usuario", nullable = false)
+	private usuario Usuario;
 
 	public contador() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public contador(Long id, String descContador, String linkedinContador, usuario usuario) {
+	public contador(Long id, String descContador, String linkedinContador, usuario Usuario) {
 		super();
 		this.id = id;
 		this.descContador = descContador;
 		this.linkedinContador = linkedinContador;
-		this.usuario = usuario;
+		this.Usuario = Usuario;
 	}
 
 	public Long getId() {
@@ -64,11 +64,11 @@ public class contador {
 	}
 
 	public usuario getUsuario() {
-		return usuario;
+		return Usuario;
 	}
 
 	public void setUsuario(usuario usuario) {
-		this.usuario = usuario;
+		this.Usuario = usuario;
 	}
 	
 	
