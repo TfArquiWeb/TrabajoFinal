@@ -16,7 +16,7 @@ public interface IEmpresarioRepository extends JpaRepository<Empresario,Integer>
     @Query("from Empresario e where e.razonEmpresario like %:razonEmpresario%")
     List<Empresario> buscarEmpresario(@Param("razonEmpresario") String razonEmpresario);
 
-    List<Empresario> findByRuc(int rucEmpresario);
+    List<Empresario> findByRucEmpresario(int rucEmpresario);
 }
 
 

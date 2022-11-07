@@ -56,8 +56,8 @@ public class EmpresarioServiceImpl implements IEmpresarioService {
     }
 
     @Override
-    public List<Empresario> findByRuc(int rucEmpresario) {
-        return dEmpresario.findByRuc(rucEmpresario);
+    public List<Empresario> findByRucEmpresario(int rucEmpresario) {
+        return dEmpresario.findByRucEmpresario(rucEmpresario);
     }
 
 
