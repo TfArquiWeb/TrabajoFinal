@@ -26,9 +26,9 @@ public class ContadorImpl implements IContadorInterfaces{
 	}
 
 	@Override
-	public void delet(int idcontador) {
+	public void delet(int id) {
 		// TODO Auto-generated method stub
-		cR.deleteById(idcontador);
+		cR.deleteById(id);
 	}
 
 	@Override

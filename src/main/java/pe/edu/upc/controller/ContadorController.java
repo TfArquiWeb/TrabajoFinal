@@ -29,9 +29,9 @@ public class ContadorController {
     public List<contador> listar() {
         return cService.list();
     }
-    @DeleteMapping("/{idcontador}")
-    public void eliminar(@PathVariable("idcontador") Integer idcontador){
-        cService.delet(idcontador);
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        cService.delet(id);
     }
     @PutMapping
     public void modificar(@RequestBody contador c) {

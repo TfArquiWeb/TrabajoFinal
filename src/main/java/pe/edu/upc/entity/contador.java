@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class contador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long idcontador;
+	private Long id;
 	
 	@Column(name = "descContador", nullable = false, length = 45)
 	private String descContador;
@@ -31,20 +31,20 @@ public class contador {
 		// TODO Auto-generated constructor stub
 	}
 
-	public contador(Long idcontador, String descContador, String linkedinContador, pe.edu.upc.entity.usuario usuario) {
+	public contador(Long id, String descContador, String linkedinContador, usuario usuario) {
 		super();
-		this.idcontador = idcontador;
+		this.id = id;
 		this.descContador = descContador;
 		this.linkedinContador = linkedinContador;
 		this.usuario = usuario;
 	}
 
 	public Long getId() {
-		return idcontador;
+		return id;
 	}
 
-	public void setId(Long idcontador) {
-		this.idcontador = idcontador;
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getDescContador() {
