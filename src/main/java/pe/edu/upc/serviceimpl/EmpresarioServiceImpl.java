@@ -1,6 +1,7 @@
 package pe.edu.upc.serviceimpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RestController;
 import pe.edu.upc.entity.Empresario;
 import pe.edu.upc.repository.IEmpresarioRepository;
@@ -10,7 +11,7 @@ import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
 
-@RestController
+@Service
 public class EmpresarioServiceImpl implements IEmpresarioService {
     @Autowired
     private IEmpresarioRepository dEmpresario;
