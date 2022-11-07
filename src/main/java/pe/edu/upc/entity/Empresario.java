@@ -18,16 +18,13 @@ public class Empresario {
     @Column(name = "razonEmpresario", length = 60, nullable = false)
     private String razonEmpresario;
 
-    @Column(name = "rucEmpresario", length = 60, nullable = false)
-    @JsonSerialize(using = ToStringSerializer.class)
+    @Column(name = "rucEmpresario", length = 12, nullable = false)
     private int rucEmpresario;
 
-    @Column(name = "rubroEmpresario", length = 60, nullable = false)
-    @JsonSerialize(using = ToStringSerializer.class)
+    @Column(name = "rubroEmpresario", length = 100, nullable = false)
     private String rubroEmpresario;
 
-    @Column(name = "descEmpresario", length = 60, nullable = false)
-    @JsonSerialize(using = ToStringSerializer.class)
+    @Column(name = "descEmpresario", length = 100, nullable = false)
     private String descEmpresario;
 
     @ManyToOne
