@@ -16,7 +16,7 @@ public interface IEmpresarioService {
 
     List<Empresario> buscarUsuario(String nombreUsuario);
 
-    List<Empresario> buscarEmpresario(String nombreUsuario);
+    List<Empresario> buscarEmpresario(String razonEmpresario);
 
     List<Empresario> findByRucEmpresario(int rucEmpresario);
 }
