@@ -40,6 +40,8 @@ public class Contrato implements Serializable {
     @JoinColumn(name = "id", nullable = false)
     private usuario usuario;
 
+
+
     @ManyToOne
     @JoinColumn(name = "idtipomoneda", nullable = false)
     private tipomoneda tipomoneda;
@@ -88,6 +90,9 @@ public class Contrato implements Serializable {
         this.fechafinContrato = fechafinContrato;
     }
 
+    public pe.edu.upc.entity.tipomoneda getTipomoneda() {
+        return tipomoneda;
+    }
     public Integer getMontoContrato(){
         return montoContrato;
     }
