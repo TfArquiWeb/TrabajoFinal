@@ -17,4 +17,5 @@ public interface IContratoInterfaces {
     List<Contrato> buscarnombreUsuario(String nombreUsuario);
 
     List<Contrato> buscarTipodeMoneda(String TipodeMoneda);
+
 }

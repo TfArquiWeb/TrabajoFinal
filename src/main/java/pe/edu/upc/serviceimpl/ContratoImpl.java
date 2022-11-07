@@ -47,6 +47,7 @@ public class ContratoImpl implements IContratoInterfaces {
 
     public List<Contrato> buscarTipodeMoneda(String TipodeMoneda) {
         return dContrato.buscarTipodeMoneda(TipodeMoneda);
+
     }
 }
 
