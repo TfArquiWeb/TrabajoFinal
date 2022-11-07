@@ -24,4 +24,15 @@ public class TipoPagoImpl implements ITipoPagoInterfaces{
 		return tpR.findAll();
 	}
 
+	@Override
+	public void delete(int idTipoPago) {
+		// TODO Auto-generated method stub
+		tpR.deleteById(idTipoPago);
+	}
+
+	@Override
+	public List<tipopago> search(String tipodepago){
+		return tpR.buscarNombre(tipodepago);
+	}
+
 }
