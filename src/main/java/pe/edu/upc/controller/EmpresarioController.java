@@ -13,7 +13,7 @@ import java.util.Optional;
 @RequestMapping("/empresarios")
 public class EmpresarioController {
     @Autowired
-private IEmpresarioService empService;
+    private IEmpresarioService empService;
 
     @PostMapping
     public void registrar(@RequestBody Empresario emp) {empService.insertar(emp);
