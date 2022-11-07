@@ -13,7 +13,7 @@ public class tipopago {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(name = "tipopago")
+	@Column(name = "tipopago",length = 35,nullable = false)
 	private String Tipopago;
 	public tipopago() {
 		super();
@@ -22,7 +22,7 @@ public class tipopago {
 	public tipopago(Long id, String tipopago) {
 		super();
 		this.id = id;
-		Tipopago = tipopago;
+		this.Tipopago = tipopago;
 	}
 	public Long getId() {
 		return id;
