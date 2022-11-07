@@ -1,18 +1,23 @@
 package pe.edu.upc.controller;
 
+import java.security.Provider;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import pe.edu.upc.entity.tipomoneda;
-import pe.edu.upc.serviceimpl.TipomonedaImpl;
+import pe.edu.upc.serviceinterfeaces.ITipomonedaInterfaces;
+
+import java.text.ParseException;
+import java.util.List;
+import java.util.Optional;
 
 @RestController
-@RequestMapping("/TipoMoneda")
+@RequestMapping("/Tipomoneda")
 public class TipomonedaController {
 	@Autowired
-    private TipomonedaImpl tmService;
+    private ITipomonedaInterfaces tmService;
 
     @PostMapping
     public void registrar(@RequestBody tipomoneda t) {
@@ -31,8 +36,12 @@ public class TipomonedaController {
         tmService.insert(t);
     }
 
-    @PostMapping("Evaluacion/Buscar")
+    @PostMapping("/buscar")
     public List<tipomoneda> buscar(@RequestBody tipomoneda t){
         return tmService.search(t.getTipodeMoneda());
+    }
+    @GetMapping("/{id}")
+    public Optional<tipomoneda> listarId(@PathVariable("id") Integer id){
+        return tmService.listarId(id);
     }
 }
