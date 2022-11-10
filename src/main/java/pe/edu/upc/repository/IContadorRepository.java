@@ -15,6 +15,6 @@ public interface IContadorRepository extends JpaRepository<contador, Integer>{
     List<contador> Buscardesc(@Param("descContador")String descContador);
     
     
-    @Query("from contador c where c.Usuario.nombreUsuario like %:nombreUsuario")
+    @Query("from contador c where c.usuario.nombreUsuario like %:nombreUsuario")
     List<contador> BuscarUsuario(@Param("nombreUsuario")String nombreUsuario);
 }

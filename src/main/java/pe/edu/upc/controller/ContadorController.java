@@ -1,6 +1,7 @@
 package pe.edu.upc.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -45,4 +46,8 @@ public class ContadorController {
     public List<contador> BuscarUsuario(@RequestBody contador c ) {
         return cService.searchUsu(c.getUsuario().getNombreUsuario());
     }
+    @GetMapping("/{id}")
+	public Optional<contador> listarId(@PathVariable("id") Integer id) {
+		return cService.listarId(id);
+	}
 }

@@ -1,6 +1,7 @@
 package pe.edu.upc.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
@@ -15,10 +16,18 @@ public class ContadorImpl implements IContadorInterfaces{
 
 	@Autowired
 	private IContadorRepository cR;
+	
 	@Override
-	public void insert(contador c) {
+	@Transactional
+	public boolean insert(contador c) {
 		// TODO Auto-generated method stub
-		cR.save(c);
+		contador objcontador = cR.save(c);
+		if (objcontador==null) {
+			return false;
+		}else
+		{
+			return true;
+		}
 	}
 
 	@Override
@@ -33,6 +42,13 @@ public class ContadorImpl implements IContadorInterfaces{
 		// TODO Auto-generated method stub
 		cR.deleteById(id);
 	}
+	
+	@Override
+	public Optional<contador> listarId(int id) {
+		// TODO Auto-generated method stub
+		return cR.findById(id);
+	}
+
 
 	@Override
 	public List<contador> searchdesc(String descContador) {
@@ -45,5 +61,5 @@ public class ContadorImpl implements IContadorInterfaces{
 		// TODO Auto-generated method stub
 		return cR.BuscarUsuario(nombreUsuario);
 	}
-
+	
 }
