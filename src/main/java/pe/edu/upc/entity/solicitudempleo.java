@@ -21,9 +21,9 @@ public class solicitudempleo {
     @Column(name = "estadoSE", nullable = false, length = 45)
     private String estadoSE;
 
-    @ManyToOne
-    @JoinColumn(name = "empresario", nullable = false)
-    private empresario empresario;
+    //@ManyToOne
+    //@JoinColumn(name = "empresario", nullable = false)
+    //private empresario empresario;
 
     @ManyToOne
     @JoinColumn(name = "contador", nullable = false)
@@ -34,12 +34,12 @@ public class solicitudempleo {
         // TODO Auto-generated constructor stub
     }
 
-    public solicitudempleo(int id, LocalDate descContador, String estadoSE, pe.edu.upc.entity.Empresario Empresario, pe.edu.upc.entity.contador contador) {
+    public solicitudempleo(int id, LocalDate descContador, String estadoSE, /*pe.edu.upc.entity.Empresario Empresario,*/ pe.edu.upc.entity.contador contador) {
         super();
         this.id = id;
         this.fechaSE = fechaSE;
         this.estadoSE = estadoSE;
-        this.Empresario = Empresario;
+        //this.Empresario = Empresario;
         this.contador = contador;
     }
 
@@ -67,13 +67,13 @@ public class solicitudempleo {
         this.estadoSE = estadoSE;
     }
 
-    public Empresario getEmpresario() {
-        return Empresario;
-    }
+    //public Empresario getEmpresario() {
+    //    return Empresario;
+    //}
 
-    public void setEmpresario(Empresario Empresario) {
-        this.Empresario = Empresario;
-    }
+    //public void setEmpresario(Empresario Empresario) {
+    //    this.Empresario = Empresario;
+    //}
 
     public contador getContador() {
         return contador;
@@ -81,4 +81,5 @@ public class solicitudempleo {
 
     public void setContador(contador contador) {
         this.contador = contador;
+    }
 }
