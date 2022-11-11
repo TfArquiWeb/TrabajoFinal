@@ -18,10 +18,7 @@ public class Capacitacion {
         this.descCapacitacion = descCapacitacion;
     }
 
-    public int getIdCapacitacion() {
-        return id;
-    }
-
+    public int getIdCapacitacion() {return id;}
     public void setIdCapacitacion(int idPropietario) {
         this.id = idPropietario;
     }
@@ -29,7 +26,6 @@ public class Capacitacion {
     public String getDescCapacitacion() {
         return descCapacitacion;
     }
-
     public void setDescCapacitacion(String descCapacitacion) {
         this.descCapacitacion = descCapacitacion;
     }

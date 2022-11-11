@@ -12,22 +12,22 @@ import javax.persistence.Table;
 public class experiencia {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	@Column(name = "descExperiencia", length = 45, nullable = false)
 	private String descExperiencia;
 	public experiencia() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public experiencia(Long id, String descExperiencia) {
+	public experiencia(int id, String descExperiencia) {
 		super();
 		this.id = id;
 		this.descExperiencia = descExperiencia;
 	}
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getDescExperiencia() {
