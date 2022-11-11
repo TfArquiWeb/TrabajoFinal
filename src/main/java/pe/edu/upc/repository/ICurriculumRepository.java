@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import pe.edu.upc.entity.Curriculum;
 
-
 @Repository
 public interface ICurriculumRepository extends JpaRepository<Curriculum, Integer> {
 

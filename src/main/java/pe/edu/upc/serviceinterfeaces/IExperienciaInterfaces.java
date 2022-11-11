@@ -9,6 +9,7 @@ import pe.edu.upc.entity.experiencia;
 public interface IExperienciaInterfaces {
 	public void insert(experiencia e);
 	List<experiencia> list();
-	public void eliminar(int id);
+	public void delete(int id);
+	public Optional<experiencia> listarId(int id);
 	List<experiencia> buscardescExperiencia(String descExperiencia);
 }
