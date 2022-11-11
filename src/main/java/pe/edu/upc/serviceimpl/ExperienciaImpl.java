@@ -10,24 +10,22 @@ import pe.edu.upc.entity.Capacitacion;
 import pe.edu.upc.entity.experiencia;
 import pe.edu.upc.repository.IExperienciaRepository;
 import pe.edu.upc.serviceinterfeaces.IExperienciaInterfaces;
+
 @Service
 public class ExperienciaImpl implements IExperienciaInterfaces{
 	@Autowired
 	private IExperienciaRepository eR;
 	@Override
-	public void insert(experiencia e) {
-		// TODO Auto-generated method stub
-		eR.save(e);
-	}
+	public void insert(experiencia e) { eR.save(e); }
 
 	@Override
-	public List<experiencia> list() {
-		// TODO Auto-generated method stub
-		return eR.findAll();
-	}
+	public List<experiencia> list() { return eR.findAll(); }
 
 	@Override
-	public void eliminar(int id) {eR.deleteById(id);}
+	public void delete(int id) {eR.deleteById(id);}
+
+	@Override
+	public Optional<experiencia> listarId(int id) {return eR.findById(id);}
 	@Override
 	public List<experiencia> buscardescExperiencia(String descExperiencia) {return eR.buscardescExperiencia(descExperiencia);}
 

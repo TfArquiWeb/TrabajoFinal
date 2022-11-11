@@ -16,11 +16,8 @@ public class habilidad {
 	@Column(name = "descHabilidad", nullable = false, length = 45)
 	private String descHabilidad;
 	public habilidad() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	public habilidad(int id, String descHabilidad) {
-		super();
 		this.id = id;
 		this.descHabilidad = descHabilidad;
 	}

@@ -16,25 +16,29 @@ public class ExperienciaController {
 	 @Autowired
 	 private ExperienciaImpl expService;
 
-	 @PostMapping
-	 public void registrar(@RequestBody experiencia e) {
+	@PostMapping
+	public void registrar(@RequestBody experiencia e) {
 			expService.insert(e);
 	    }
-
-		@GetMapping
-		public List<experiencia> listar() {
-	        return expService.list();
-	    }
-	@DeleteMapping("/eliminar/{id}")
-	public void eliminar(@PathVariable("id") Integer id){
-		expService.eliminar(id);
-	}
 	@PutMapping
 	public void modificar(@RequestBody experiencia e) {
 		expService.insert(e);
 	}
-	@PostMapping("/buscar")
-	public List<experiencia> buscar(@RequestBody experiencia e) {
-		 return expService.buscardescExperiencia(e.getDescExperiencia());
+	@GetMapping
+	public List<experiencia> listar() {
+		return expService.list();
 	}
+	@DeleteMapping("/{id}")
+	public void eliminar(@PathVariable("id") Integer id){
+		expService.delete(id);
+	}
+
+	@PostMapping("/buscar")
+	public List<experiencia> buscar(@RequestBody String descExperiencia ) throws ParseException {
+		List<experiencia> listaExperiencia;
+		listaExperiencia =expService.buscardescExperiencia(descExperiencia);
+		return listaExperiencia;
+	}
+	@GetMapping("/{id}")
+	public Optional<experiencia> listarId(@PathVariable("id") Integer id) { return expService.listarId(id);}
 }

@@ -16,11 +16,8 @@ public class experiencia {
 	@Column(name = "descExperiencia", length = 45, nullable = false)
 	private String descExperiencia;
 	public experiencia() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
 	public experiencia(int id, String descExperiencia) {
-		super();
 		this.id = id;
 		this.descExperiencia = descExperiencia;
 	}
@@ -30,9 +27,7 @@ public class experiencia {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getDescExperiencia() {
-		return descExperiencia;
-	}
+	public String getDescExperiencia() { return descExperiencia;}
 	public void setDescExperiencia(String descExperiencia) {
 		this.descExperiencia = descExperiencia;
 	}

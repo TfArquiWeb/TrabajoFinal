@@ -1,4 +1,5 @@
 package pe.edu.upc.entity;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -28,15 +29,13 @@ public class Curriculum implements Serializable {
     }
 
     public Curriculum() {
-        super();
-        // TODO Auto-generated constructor stub
     }
 
-    public int getIdCurriculum() {
+    public int getidCurriculum() {
         return idCurriculum;
     }
 
-    public void setIdCurriculum(int idCurriculum) {
+    public void setidCurriculum(int id) {
         this.idCurriculum = idCurriculum;
     }
 

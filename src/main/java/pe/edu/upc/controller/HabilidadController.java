@@ -20,16 +20,23 @@ public class HabilidadController {
     public void registrar(@RequestBody habilidad h) {
         hService.insert(h);
     }
+    @PutMapping
+    public void modificar(@RequestBody habilidad h) {
+        hService.insert(h);
+    }
     @GetMapping
     public List<habilidad> listar() {
         return hService.list();
     }
-    @DeleteMapping("/eliminar/{id}")
-    public void eliminar(@PathVariable("id") Integer id) {hService.eliminar(id);}
-    @PutMapping
-    public void modificar(@RequestBody habilidad h) {hService.insert(h);}
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {hService.delete(id);}
+
     @PostMapping("/buscar")
-    public List<habilidad> buscar(@RequestBody habilidad h) {
-        return hService.buscardescHabilidad(h.getDescHabilidad());
+    public List<habilidad> buscar(@RequestBody String descExperiencia ) throws ParseException {
+        List<habilidad> listaHabilidad;
+        listaHabilidad =hService.buscardescHabilidad(descExperiencia);
+        return listaHabilidad;
     }
+    @GetMapping("/{id}")
+    public Optional<habilidad> listarId(@PathVariable("id") Integer id) { return hService.listarId(id);}
 }
