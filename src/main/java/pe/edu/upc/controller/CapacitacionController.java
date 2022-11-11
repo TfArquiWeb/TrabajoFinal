@@ -29,7 +29,7 @@ public class CapacitacionController {
         cService.insert(c);
     }
     @PostMapping("/buscar")
-    public List<Capacitacion> Buscar(@RequestBody Capacitacion c ) {
-        return cService.search(c.getDescCapacitacion());
+    public List<Capacitacion> buscar(@RequestBody Capacitacion c ) {
+        return cService.buscar(c.getDescCapacitacion());
     }
 }

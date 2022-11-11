@@ -11,9 +11,10 @@ import java.util.List;
 public class CapacitacionServiceImpl implements ICapacitacionService {
     @Autowired
     private ICapacitacionRepository cR;
-
     @Override
-    public void insert(Capacitacion capacitacion) {cR.save(capacitacion);}
+    public void insert(Capacitacion capacitacion) {
+        cR.save(capacitacion);
+    }
 
     @Override
     public List<Capacitacion> list() {return cR.findAll();}
@@ -21,5 +22,5 @@ public class CapacitacionServiceImpl implements ICapacitacionService {
     @Override
     public void delete(int id) {cR.deleteById(id);}
     @Override
-    public List<Capacitacion> search(String descCapacitacion) {return cR.BuscarNombre(descCapacitacion);}
+    public List<Capacitacion> buscar(String descCapacitacion) {return cR.buscardescCapacitacion(descCapacitacion);}
 }

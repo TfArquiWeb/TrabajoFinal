@@ -24,17 +24,12 @@ public class HabilidadController {
     public List<habilidad> listar() {
         return hService.list();
     }
+    @DeleteMapping("/eliminar/{id}")
+    public void eliminar(@PathVariable("id") Integer id) {hService.eliminar(id);}
     @PutMapping
     public void modificar(@RequestBody habilidad h) {hService.insert(h);}
-    @DeleteMapping
-    public void eliminar(@PathVariable("id") Integer id) {hService.eliminar(id);}
     @PostMapping("/buscar")
-    public List<habilidad> buscar(@RequestBody String descHabilidad) throws ParseException {
-        List<habilidad> listaHabilidad;
-        listaHabilidad = hService.buscardescHabilidad(descHabilidad);
-        return listaHabilidad;
+    public List<habilidad> buscar(@RequestBody habilidad h) {
+        return hService.buscardescHabilidad(h.getDescHabilidad());
     }
-
-    @GetMapping("/{id}")
-    public Optional<habilidad> listarId(@PathVariable("id") Integer id) { return hService.listarId(id);}
 }

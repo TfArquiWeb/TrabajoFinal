@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pe.edu.upc.entity.experiencia;
 import pe.edu.upc.entity.habilidad;
 import pe.edu.upc.repository.IHabilidadRepository;
 import pe.edu.upc.serviceinterfeaces.IHabilidadInterfaces;
@@ -27,9 +28,6 @@ public class HabilidadImpl implements IHabilidadInterfaces{
 
 	@Override
 	public void eliminar(int id) { hR.deleteById(id);}
-
-	@Override
-	public Optional<habilidad> listarId(int id) {return hR.findById(id);}
 
 	@Override
 	public List<habilidad> buscardescHabilidad(String descHabilidad) {return hR.buscardescHabilidad(descHabilidad);}

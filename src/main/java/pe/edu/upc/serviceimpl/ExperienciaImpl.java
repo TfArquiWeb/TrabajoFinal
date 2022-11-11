@@ -1,6 +1,7 @@
 package pe.edu.upc.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +27,8 @@ public class ExperienciaImpl implements IExperienciaInterfaces{
 	}
 
 	@Override
-	public void delete(int id) {eR.deleteById(id);}
+	public void eliminar(int id) {eR.deleteById(id);}
 	@Override
-	public List<experiencia> search(String descExperiencia) {return eR.BuscarNombre(descExperiencia);}
+	public List<experiencia> buscardescExperiencia(String descExperiencia) {return eR.buscardescExperiencia(descExperiencia);}
+
 }

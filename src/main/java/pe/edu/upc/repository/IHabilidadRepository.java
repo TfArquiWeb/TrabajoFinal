@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface IHabilidadRepository extends JpaRepository<habilidad,Integer>{
-    @Query("from habilidad h where h.descHabilidad like %:descHabilidad")
+    @Query("from habilidad h where h.descHabilidad like %:descHabilidad%")
     List<habilidad> buscardescHabilidad(@Param("descHabilidad") String descHabilidad);
 }
