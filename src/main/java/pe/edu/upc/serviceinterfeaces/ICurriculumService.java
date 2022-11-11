@@ -11,12 +11,11 @@ public interface ICurriculumService {
 
     public void eliminar(int idCurriculum);
 
-    Optional<Curriculum> listarId(int idCurriculum);
-
     List<Curriculum> listar();
 
     List<Curriculum> buscarCapacitacion(String descCurriculum);
 
     List<Curriculum> buscarExperiencia(String descExperiencia);
+    List<Curriculum> buscarHabilidad(String descHabilidad);
 
 }

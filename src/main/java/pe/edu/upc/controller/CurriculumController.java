@@ -8,11 +8,9 @@ import pe.edu.upc.serviceinterfeaces.ICurriculumService;
 import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
-
 @RestController
 @RequestMapping("/Curriculum")
 public class CurriculumController {
-
     @Autowired
     private ICurriculumService cService;
 
@@ -26,31 +24,24 @@ public class CurriculumController {
         cService.insertar(c);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/eliminar/{id}")
     public void eliminar(@PathVariable("id") Integer id) {
         cService.eliminar(id);
     }
 
     @GetMapping
-    public List<Curriculum> listar() {
-        return cService.listar();
+    public List<Curriculum> listar() { return cService.listar();}
 
+    @PostMapping("/buscarCapacitacion")
+    public List<Curriculum> buscarCapacitacion(@RequestBody Curriculum c) {
+        return cService.buscarCapacitacion(c.getCapacitacion().getDescCapacitacion());
     }
-
-    @PostMapping("/buscar")
-    public List<Curriculum> buscarCapacitacion(@RequestBody Curriculum c) throws ParseException {
-
-        List<Curriculum> listaCapacitacion;
-        listaCapacitacion = cService.buscarCapacitacion(c.getCapacitacion().getDescCapacitacion());
-        if (listaCapacitacion.isEmpty()) {
-
-            listaCapacitacion = cService.buscarExperiencia(c.getExperiencia().getDescExperiencia());
-        }
-        return listaCapacitacion;
-
+    @PostMapping("/buscarHabilidad")
+    public List<Curriculum> buscarHabilidad(@RequestBody Curriculum c) {
+        return cService.buscarHabilidad(c.getHabilidad().getDescHabilidad());
     }
-    @GetMapping("/{id}")
-    public Optional<Curriculum> listarId(@PathVariable("id") Integer id) {
-        return cService.listarId(id);
+    @PostMapping("/buscarExperiencia")
+    public List<Curriculum> buscarExperiencia(@RequestBody Curriculum c) {
+        return cService.buscarExperiencia(c.getExperiencia().getDescExperiencia());
     }
 }

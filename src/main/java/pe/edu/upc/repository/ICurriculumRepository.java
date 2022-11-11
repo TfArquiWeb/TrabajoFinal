@@ -18,8 +18,7 @@ public interface ICurriculumRepository extends JpaRepository<Curriculum, Integer
     @Query("from Curriculum c where c.experiencia.descExperiencia like %:descExperiencia%")
     List<Curriculum> buscarExperiencia(@Param("descExperiencia") String descExperiencia);
 
-
-    @Query("from Curriculum c where c.idCurriculum like %:idCurriculum%")
-    List<Curriculum> buscarVehiculo(@Param("idCurriculum") String idCurriculum);
+    @Query("from Curriculum c where c.habilidad.descHabilidad like %:descHabilidad%")
+    List<Curriculum> buscarHabilidad(@Param("descHabilidad") String descHabilidad);
 
 }

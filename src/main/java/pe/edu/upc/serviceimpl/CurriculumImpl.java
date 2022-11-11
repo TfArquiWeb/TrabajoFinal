@@ -18,29 +18,17 @@ public class CurriculumImpl implements ICurriculumService {
 
     @Override
     @Transactional
-    public boolean insertar(Curriculum vehiculo) {
-        Curriculum objCurriculum = dCurriculum.save(vehiculo);
+    public boolean insertar(Curriculum curriculum) {
+        Curriculum objCurriculum = dCurriculum.save(curriculum);
         if (objCurriculum == null) {
             return false;
         } else {
             return true;
         }
     }
-
     @Override
     @Transactional
-    public void eliminar(int idCurriculum) {
-
-        dCurriculum.deleteById(idCurriculum);
-
-    }
-
-    @Override
-    public Optional<Curriculum> listarId(int idCurriculum) {
-
-        return dCurriculum.findById(idCurriculum);
-    }
-
+    public void eliminar(int idCurriculum) {dCurriculum.deleteById(idCurriculum);}
     @Override
     public List<Curriculum> listar() {
         return dCurriculum.findAll();
@@ -50,10 +38,12 @@ public class CurriculumImpl implements ICurriculumService {
     public List<Curriculum> buscarCapacitacion(String descCurriculum) {
         return dCurriculum.buscarCapacitacion(descCurriculum);
     }
-
     @Override
     public List<Curriculum> buscarExperiencia(String descExperiencia) {
         return dCurriculum.buscarExperiencia(descExperiencia);
     }
-
+    @Override
+    public List<Curriculum> buscarHabilidad(String descHabilidad) {
+        return dCurriculum.buscarHabilidad(descHabilidad);
+    }
 }
