@@ -22,10 +22,17 @@ public class Curriculum implements Serializable {
     private habilidad habilidad;
 
 
+
+
+
+    
+    public Curriculum(int idCurriculum, Capacitacion capacitacion, experiencia experiencia, habilidad habilidad) {
+
     public Curriculum() {
     }
 
     public Curriculum(int idCurriculum, Capacitacion capacitacion, pe.edu.upc.entity.experiencia experiencia, pe.edu.upc.entity.habilidad habilidad) {
+
         this.idCurriculum = idCurriculum;
         this.capacitacion = capacitacion;
         this.experiencia = experiencia;
