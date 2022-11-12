@@ -24,47 +24,50 @@ public class Curriculum implements Serializable {
 
 
 
+
     
     public Curriculum(int idCurriculum, Capacitacion capacitacion, experiencia experiencia, habilidad habilidad) {
+
+    public Curriculum() {
+    }
+
+    public Curriculum(int idCurriculum, Capacitacion capacitacion, pe.edu.upc.entity.experiencia experiencia, pe.edu.upc.entity.habilidad habilidad) {
+
         this.idCurriculum = idCurriculum;
         this.capacitacion = capacitacion;
         this.experiencia = experiencia;
         this.habilidad = habilidad;
     }
 
-    public Curriculum() {
-    }
-
-    public int getidCurriculum() {
+    public int getIdCurriculum() {
         return idCurriculum;
     }
 
-    public void setidCurriculum(int id) {
+    public void setIdCurriculum(int idCurriculum) {
         this.idCurriculum = idCurriculum;
     }
 
     public Capacitacion getCapacitacion() {
         return capacitacion;
     }
+
     public void setCapacitacion(Capacitacion capacitacion) {
         this.capacitacion = capacitacion;
     }
 
-    public experiencia getExperiencia() {
+    public pe.edu.upc.entity.experiencia getExperiencia() {
         return experiencia;
     }
-    public void setExperiencia(experiencia experiencia) {
+
+    public void setExperiencia(pe.edu.upc.entity.experiencia experiencia) {
         this.experiencia = experiencia;
     }
 
-    public habilidad getHabilidad() {
+    public pe.edu.upc.entity.habilidad getHabilidad() {
         return habilidad;
     }
-    public void setHabilidad(habilidad habilidad) {
+
+    public void setHabilidad(pe.edu.upc.entity.habilidad habilidad) {
         this.habilidad = habilidad;
     }
-
-
-
-
 }

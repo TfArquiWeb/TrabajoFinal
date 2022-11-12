@@ -14,7 +14,7 @@ import javax.persistence.Table;
 public class contador {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	
 	@Column(name = "descContador", nullable = false, length = 45)
 	private String descContador;
@@ -23,27 +23,27 @@ public class contador {
 	private String linkedinContador;
 	
 	@ManyToOne
-	@JoinColumn(name = "Usuario", nullable = false)
-	private usuario Usuario;
+	@JoinColumn(name = "usuario", nullable = false)
+	private usuario usuario;
 
 	public contador() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public contador(Long id, String descContador, String linkedinContador, usuario Usuario) {
+	public contador(int id, String descContador, String linkedinContador, pe.edu.upc.entity.usuario usuario) {
 		super();
 		this.id = id;
 		this.descContador = descContador;
 		this.linkedinContador = linkedinContador;
-		this.Usuario = Usuario;
+		this.usuario = usuario;
 	}
 
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -64,11 +64,11 @@ public class contador {
 	}
 
 	public usuario getUsuario() {
-		return Usuario;
+		return usuario;
 	}
 
 	public void setUsuario(usuario usuario) {
-		this.Usuario = usuario;
+		this.usuario = usuario;
 	}
 	
 	

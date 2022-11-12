@@ -1,6 +1,7 @@
 package pe.edu.upc.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +33,9 @@ public class UsuarioController {
     @PostMapping("/buscar")
     public List<usuario> Buscar(@RequestBody usuario u ) {
         return uService.search(u.getNombreUsuario());
+    }
+    @GetMapping("/{id}")
+    public Optional<usuario> listarId(@PathVariable("id") Integer id) {
+        return uService.listarId(id);
     }
 }
