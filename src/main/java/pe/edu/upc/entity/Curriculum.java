@@ -21,6 +21,10 @@ public class Curriculum implements Serializable {
     @JoinColumn(name = "descHabilidad", nullable = false)
     private habilidad habilidad;
 
+
+
+
+    
     public Curriculum(int idCurriculum, Capacitacion capacitacion, experiencia experiencia, habilidad habilidad) {
         this.idCurriculum = idCurriculum;
         this.capacitacion = capacitacion;
