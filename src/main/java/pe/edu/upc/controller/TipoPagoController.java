@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import pe.edu.upc.entity.tipomoneda;
 import pe.edu.upc.entity.tipopago;
 import pe.edu.upc.serviceimpl.TipoPagoImpl;
 
@@ -19,9 +20,7 @@ public class TipoPagoController {
 	}
 
 	@GetMapping
-	public List<tipopago> listar() {
-		return tpService.list();
-	}
+	public List<tipopago> listar() { return tpService.list(); }
 
 	@DeleteMapping("/{id}")
 	public void eliminar(@PathVariable("id") Integer id){
