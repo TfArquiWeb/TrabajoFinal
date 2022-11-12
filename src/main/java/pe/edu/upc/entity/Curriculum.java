@@ -26,7 +26,6 @@ public class Curriculum implements Serializable {
 
 
     
-    public Curriculum(int idCurriculum, Capacitacion capacitacion, experiencia experiencia, habilidad habilidad) {
 
     public Curriculum() {
     }
@@ -71,3 +70,4 @@ public class Curriculum implements Serializable {
         this.habilidad = habilidad;
     }
 }
+
