@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.entity.Capacitacion;
 import pe.edu.upc.entity.Curriculum;
+import pe.edu.upc.entity.contador;
 import pe.edu.upc.serviceinterfeaces.ICurriculumService;
 
 import java.text.ParseException;
@@ -33,23 +34,17 @@ public class CurriculumController {
 
     @PostMapping("/buscarCapacitacion")
     public List<Curriculum> buscarCapacitacion(@RequestBody Curriculum c) throws ParseException {
-        List<Curriculum> listaCurriculumCapacitaciom;
-        listaCurriculumCapacitaciom = cService.buscarCapacitacion(c.getCapacitacion().getDescCapacitacion());
-        return listaCurriculumCapacitaciom;
+        return cService.buscarExperiencia(c.getCapacitacion().getDescCapacitacion());
     }
 
     @PostMapping("/buscarExperiencia")
-    public List<Curriculum> buscarExperiencia(@RequestBody Curriculum c) throws ParseException {
-        List<Curriculum> listaCurriculumExperiencia;
-        listaCurriculumExperiencia = cService.buscarExperiencia(c.getExperiencia().getDescExperiencia());
-        return listaCurriculumExperiencia;
+    public List<Curriculum> buscarExperiencia(@RequestBody Curriculum c ) throws ParseException{
+        return cService.buscarExperiencia(c.getExperiencia().getDescExperiencia());
     }
 
     @PostMapping("/buscarHabilidad")
     public List<Curriculum> buscarHabilidad(@RequestBody Curriculum c) throws ParseException {
-        List<Curriculum> listaCurriculumHabilidad;
-        listaCurriculumHabilidad = cService.buscarHabilidad(c.getHabilidad().getDescHabilidad());
-        return listaCurriculumHabilidad;
+        return cService.buscarHabilidad(c.getHabilidad().getDescHabilidad());
     }
 
     @GetMapping("/{id}")
