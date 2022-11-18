@@ -1,5 +1,6 @@
 package pe.edu.upc.controller;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,15 +40,20 @@ public class ContadorController {
         cService.insert(c);
     }
     @PostMapping("/buscardesc")
-    public List<contador> Buscardesc(@RequestBody contador c ) {
-        return cService.searchdesc(c.getDescContador());
+    public List<contador> Buscardesc(@RequestBody String c ) throws ParseException{
+        return cService.searchdesc(c);
     }
-    @PostMapping("/buscarUsu")
-    public List<contador> BuscarUsuario(@RequestBody contador c ) {
-        return cService.searchUsu(c.getUsuario().getNombreUsuario());
+    @PostMapping("/buscarusu")
+    public List<contador> BuscarUsuario(@RequestBody String c )throws ParseException {
+        return cService.searchUsu(c);
     }
+    @GetMapping("/ordenardesc")
+	public List<contador> ordenarDesc() throws ParseException {		
+		return cService.ordenarDesc();
+	}
     @GetMapping("/{id}")
 	public Optional<contador> listarId(@PathVariable("id") Integer id) {
 		return cService.listarId(id);
 	}
+	
 }

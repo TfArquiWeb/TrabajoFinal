@@ -12,4 +12,5 @@ public interface IContadorInterfaces {
 	Optional<contador> listarId(int id);
 	List<contador>searchdesc(String descContador);
 	List<contador>searchUsu(String nombreUsuario);
+	List<contador>ordenarDesc();
 }

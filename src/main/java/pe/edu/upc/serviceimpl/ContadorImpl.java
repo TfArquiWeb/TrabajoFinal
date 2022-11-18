@@ -61,5 +61,11 @@ public class ContadorImpl implements IContadorInterfaces{
 		// TODO Auto-generated method stub
 		return cR.BuscarUsuario(nombreUsuario);
 	}
+
+	@Override
+	public List<contador> ordenarDesc() {
+		// TODO Auto-generated method stub
+		return cR.ordenarDesc();
+	}
 	
 }
