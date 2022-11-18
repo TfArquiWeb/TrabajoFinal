@@ -4,13 +4,13 @@ package pe.edu.upc.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "empresario")
+@Table(name = "Empresario")
 public class Empresario {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int ide;
+    private int id;
 
     @Column(name = "razonEmpresario", length = 60, nullable = false)
     private String razonEmpresario;
@@ -25,11 +25,11 @@ public class Empresario {
     private String descEmpresario;
 
     @ManyToOne
-    @JoinColumn(name = "id", nullable = false)
+    @JoinColumn(name = "usuario", nullable = false)
     private usuario usuario;
 
-    public Empresario(int ide, String razonEmpresario, int rucEmpresario, String rubroEmpresario, String descEmpresario, usuario usuario) {
-        this.ide = ide;
+    public Empresario(int id, String razonEmpresario, int rucEmpresario, String rubroEmpresario, String descEmpresario, usuario usuario) {
+        this.id = id;
         this.razonEmpresario = razonEmpresario;
         this.rucEmpresario = rucEmpresario;
         this.rubroEmpresario = rubroEmpresario;
@@ -43,11 +43,11 @@ public class Empresario {
     }
 
     public int getIdEmpresario() {
-        return ide;
+        return id;
     }
 
     public void setIdEmpresario(int ide) {
-        this.ide = ide;
+        this.id = ide;
     }
 
     public String getRazonEmpresario() {
