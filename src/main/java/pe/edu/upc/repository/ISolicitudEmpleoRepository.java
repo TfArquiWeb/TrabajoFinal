@@ -13,4 +13,8 @@ public interface ISolicitudEmpleoRepository extends JpaRepository<solicitudemple
     @Query("from solicitudempleo se where se.estadoSE  like %:estadoSE%")
     List<solicitudempleo> Buscarestado(@Param("estadoSE")String estadoSE);
 
+    @Query(value="Select * from contador order by id desc",nativeQuery = true)
+    List<solicitudempleo> Ordenardesc();
+
+
 }

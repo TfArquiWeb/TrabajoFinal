@@ -12,4 +12,6 @@ public interface ISolicitudEmpleoInterfacaces {
     Optional<solicitudempleo> listarId(int id);
     List<solicitudempleo>Buscarestado(String estadoSE);
 
+    List<solicitudempleo>Ordenardesc();
+
 }

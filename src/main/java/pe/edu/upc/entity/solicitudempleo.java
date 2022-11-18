@@ -82,4 +82,6 @@ public class solicitudempleo {
     public void setContador(contador contador) {
         this.contador = contador;
     }
+
+
 }

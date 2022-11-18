@@ -47,4 +47,9 @@ public class SolicitudEmpleoImpl implements ISolicitudEmpleoInterfacaces {
     public List<solicitudempleo> Buscarestado(String estadoSE) {
         return SE.Buscarestado(estadoSE);
     }
+
+    @Override
+    public List<solicitudempleo> Ordenardesc() {
+        return SE.Ordenardesc();
+    }
 }

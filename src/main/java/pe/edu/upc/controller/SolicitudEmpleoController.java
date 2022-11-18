@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.entity.solicitudempleo;
 import pe.edu.upc.serviceimpl.SolicitudEmpleoImpl;
 
+import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -34,13 +35,18 @@ public class SolicitudEmpleoController {
     public void modificar(@RequestBody solicitudempleo se) {SE.insert(se);}
 
     @PostMapping("/buscador")
-    public List<solicitudempleo> Buscador(@RequestBody solicitudempleo se) {
+    public List<solicitudempleo> Buscador(@RequestBody solicitudempleo se) throws ParseException {
         return SE.Buscarestado(se.getEstadoSE());
     }
 
     @GetMapping("/{id}")
     public Optional<solicitudempleo> listarId(@PathVariable("id")Integer id){
         return SE.listarId(id);
+    }
+
+    @GetMapping("/ordenarsoli")
+    public List<solicitudempleo> Ordenardec() throws ParseException{
+        return SE.Ordenardesc();
     }
 
 
