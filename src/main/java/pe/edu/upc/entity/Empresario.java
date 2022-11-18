@@ -4,7 +4,7 @@ package pe.edu.upc.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Empresario")
+@Table(name = "empresario")
 public class Empresario {
     private static final long serialVersionUID = 1L;
 
