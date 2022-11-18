@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface ICapacitacionRepository extends JpaRepository<Capacitacion,Integer>{
-    @Query("from Capacitacion c where c.descCapacitacion like %:descCapacitacion")
-    List<Capacitacion> BuscarNombre(@Param("descCapacitacion")String descCapacitacion);
+    @Query("from Capacitacion c where c.descCapacitacion like %:descCapacitacion%")
+    List<Capacitacion> buscardescCapacitacion(@Param("descCapacitacion")String descCapacitacion);
 }

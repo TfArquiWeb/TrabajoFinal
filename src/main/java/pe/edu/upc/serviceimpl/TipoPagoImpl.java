@@ -25,9 +25,9 @@ public class TipoPagoImpl implements ITipoPagoInterfaces{
 	}
 
 	@Override
-	public void delete(int idTipoPago) {
+	public void delete(int id) {
 		// TODO Auto-generated method stub
-		tpR.deleteById(idTipoPago);
+		tpR.deleteById(id);
 	}
 
 	@Override
