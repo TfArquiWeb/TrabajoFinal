@@ -34,7 +34,7 @@ public class SolicitudEmpleoController {
     @PutMapping
     public void modificar(@RequestBody solicitudempleo se) {SE.insert(se);}
 
-    @PostMapping("/buscador")
+    @PostMapping("/buscadorsoli")
     public List<solicitudempleo> Buscador(@RequestBody solicitudempleo se) throws ParseException {
         return SE.Buscarestado(se.getEstadoSE());
     }
