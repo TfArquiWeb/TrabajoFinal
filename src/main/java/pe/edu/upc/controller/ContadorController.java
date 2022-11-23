@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.upc.entity.contador;
+import pe.edu.upc.entity.respuesta;
 import pe.edu.upc.serviceimpl.ContadorImpl;
 
 @RestController
@@ -54,6 +55,10 @@ public class ContadorController {
     @GetMapping("/{id}")
 	public Optional<contador> listarId(@PathVariable("id") Integer id) {
 		return cService.listarId(id);
+	}
+	@GetMapping("/cantidad")
+	public List<respuesta> cantidadContadores() throws ParseException {		
+		return cService.cantidadContadores();
 	}
 	
 }

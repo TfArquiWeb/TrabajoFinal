@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import pe.edu.upc.entity.contador;
+import pe.edu.upc.entity.respuesta;
 
 public interface IContadorInterfaces {
 	public boolean insert(contador c);
@@ -13,4 +14,5 @@ public interface IContadorInterfaces {
 	List<contador>searchdesc(String descContador);
 	List<contador>searchUsu(String nombreUsuario);
 	List<contador>ordenarDesc();
+	List<respuesta>cantidadContadores();
 }
