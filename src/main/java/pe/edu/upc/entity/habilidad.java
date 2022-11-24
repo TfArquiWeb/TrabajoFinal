@@ -12,22 +12,19 @@ import javax.persistence.Table;
 public class habilidad {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private int id;
 	@Column(name = "descHabilidad", nullable = false, length = 45)
 	private String descHabilidad;
 	public habilidad() {
-		super();
-		// TODO Auto-generated constructor stub
 	}
-	public habilidad(Long id, String descHabilidad) {
-		super();
+	public habilidad(int id, String descHabilidad) {
 		this.id = id;
 		this.descHabilidad = descHabilidad;
 	}
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getDescHabilidad() {

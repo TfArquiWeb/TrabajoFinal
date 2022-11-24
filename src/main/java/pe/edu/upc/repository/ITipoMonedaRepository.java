@@ -13,5 +13,4 @@ import java.util.List;
 public interface ITipoMonedaRepository extends JpaRepository<tipomoneda,Integer>{
     @Query("from tipomoneda t where t.TipodeMoneda like %:TipodeMoneda")
     List<tipomoneda> buscarNombre(@Param("TipodeMoneda") String TipodeMoneda);
-
 }
