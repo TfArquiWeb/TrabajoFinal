@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import pe.edu.upc.entity.Capacitacion;
 import pe.edu.upc.entity.Curriculum;
-import pe.edu.upc.entity.contador;
+import pe.edu.upc.entity.respuestaCu;
 import pe.edu.upc.serviceinterfeaces.ICurriculumService;
 
 import java.text.ParseException;
@@ -32,21 +32,39 @@ public class CurriculumController {
         cService.delete(id);
     }
 
-    @PostMapping("/buscarCapacitacion")
-    public List<Curriculum> buscarCapacitacion(@RequestBody Curriculum c) throws ParseException {
-        return cService.buscarExperiencia(c.getCapacitacion().getDescCapacitacion());
+    @PostMapping("/buscardesccapacitacion")
+    public List<Curriculum> BuscardescCapacitacion(@RequestBody String c) throws ParseException {
+        return cService.searchdescCapacitacion(c);
+    }
+    @PostMapping("/buscardescexperiencia")
+    public List<Curriculum> BuscardescExperiencia(@RequestBody String c ) throws ParseException{
+        return cService.searchdescExperiencia(c);
+    }
+    @PostMapping("/buscardeschabilidad")
+    public List<Curriculum> BuscardescHabilidad(@RequestBody String c) throws ParseException {
+        return cService.searchdescHabilidad(c);
     }
 
-    @PostMapping("/buscarExperiencia")
-    public List<Curriculum> buscarExperiencia(@RequestBody Curriculum c ) throws ParseException{
-        return cService.buscarExperiencia(c.getExperiencia().getDescExperiencia());
+    @PostMapping("/buscarcapacitacion")
+    public List<Curriculum> BuscarCapacitacion(@RequestBody String c) throws ParseException {
+        return cService.searchCapacitacion(c);
     }
-
-    @PostMapping("/buscarHabilidad")
-    public List<Curriculum> buscarHabilidad(@RequestBody Curriculum c) throws ParseException {
-        return cService.buscarHabilidad(c.getHabilidad().getDescHabilidad());
+    @PostMapping("/buscarexperiencia")
+    public List<Curriculum> BuscarExperiencia(@RequestBody String c ) throws ParseException{
+        return cService.searchExperiencia(c);
     }
-
+    @PostMapping("/buscarhabilidad")
+    public List<Curriculum> BuscarHabilidad(@RequestBody String c) throws ParseException {
+        return cService.searchHabilidad(c);
+    }
+    @GetMapping("/ordenardesc")
+    public List<Curriculum> ordenarDesc() throws ParseException {
+        return cService.ordenarDesc();
+    }
     @GetMapping("/{id}")
     public Optional<Curriculum> listarId(@PathVariable("id") Integer id) { return cService.listarId(id);}
+    @GetMapping("/cantidad")
+    public List<respuestaCu> cantidadCurriculum() throws ParseException {
+        return cService.cantidadCurriculum();
+    }
 }
