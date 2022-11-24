@@ -8,7 +8,7 @@ import java.io.Serializable;
 public class Curriculum implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idCurriculum;
+    private int id;
     @ManyToOne
     @JoinColumn(name = "descCapacitacion", nullable = false)
     private Capacitacion capacitacion;
@@ -30,20 +30,20 @@ public class Curriculum implements Serializable {
     public Curriculum() {
     }
 
-    public Curriculum(int idCurriculum, Capacitacion capacitacion, pe.edu.upc.entity.experiencia experiencia, pe.edu.upc.entity.habilidad habilidad) {
+    public Curriculum(int id, Capacitacion capacitacion, pe.edu.upc.entity.experiencia experiencia, pe.edu.upc.entity.habilidad habilidad) {
 
-        this.idCurriculum = idCurriculum;
+        this.id = id;
         this.capacitacion = capacitacion;
         this.experiencia = experiencia;
         this.habilidad = habilidad;
     }
 
-    public int getIdCurriculum() {
-        return idCurriculum;
+    public int getId() {
+        return id;
     }
 
-    public void setIdCurriculum(int idCurriculum) {
-        this.idCurriculum = idCurriculum;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public Capacitacion getCapacitacion() {
