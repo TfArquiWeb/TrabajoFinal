@@ -28,7 +28,7 @@ public class TipomonedaController {
         return tmService.list();
     }
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer id){
+    public void eliminar(@PathVariable("id") int id){
         tmService.delete(id);
     }
     @PutMapping
@@ -41,7 +41,7 @@ public class TipomonedaController {
         return tmService.search(t.getTipodeMoneda());
     }
     @GetMapping("/{id}")
-    public Optional<tipomoneda> listarId(@PathVariable("id") Integer id){
+    public Optional<tipomoneda> listarId(@PathVariable("id") int id){
         return tmService.listarId(id);
     }
 }

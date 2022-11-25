@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
-@Table(name = "Curriculum")
-public class Curriculum implements Serializable {
+@Table(name = "curriculum")
+public class curriculum {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
@@ -27,10 +27,10 @@ public class Curriculum implements Serializable {
 
     
 
-    public Curriculum() {
+    public curriculum() {
     }
 
-    public Curriculum(int id, Capacitacion capacitacion, pe.edu.upc.entity.experiencia experiencia, pe.edu.upc.entity.habilidad habilidad) {
+    public curriculum(int id, Capacitacion capacitacion, pe.edu.upc.entity.experiencia experiencia, pe.edu.upc.entity.habilidad habilidad) {
 
         this.id = id;
         this.capacitacion = capacitacion;
