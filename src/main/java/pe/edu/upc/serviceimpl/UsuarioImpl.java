@@ -1,9 +1,11 @@
 package pe.edu.upc.serviceimpl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import pe.edu.upc.entity.usuario;
 import pe.edu.upc.repository.IUsuarioRepository;
@@ -24,17 +26,23 @@ public class UsuarioImpl implements IUsuarioIntefaces{
 	public List<usuario> list() {
 		// TODO Auto-generated method stub
 		return uR.findAll();
-	}
-
-	@Override
-	public void delet(int id) {
-		uR.deleteById(id);
-
-	}
+	}	
 
 	@Override
 	public List<usuario> search(String nombreUsuario) {
 		return uR.BuscarNonbre(nombreUsuario);
+	}
+
+	@Override
+	public Optional<usuario> listarId(int id) {
+		// TODO Auto-generated method stub
+		return uR.findById(id);
+	}
+
+	@Override
+	public void delet(int id) {
+		// TODO Auto-generated method stub
+		uR.deleteById(id);
 	}
 
 }

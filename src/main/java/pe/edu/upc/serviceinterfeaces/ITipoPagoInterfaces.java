@@ -10,5 +10,5 @@ public interface ITipoPagoInterfaces {
 
 	public void delete(int id);
 
-	List<tipopago> search(String tipodepago);
+	List<tipopago> search(String TipoPago);
 }
