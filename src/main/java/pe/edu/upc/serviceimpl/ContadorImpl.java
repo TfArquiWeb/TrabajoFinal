@@ -1,5 +1,6 @@
 package pe.edu.upc.serviceimpl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -8,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
 
 import pe.edu.upc.entity.contador;
+import pe.edu.upc.entity.respuesta;
 import pe.edu.upc.repository.IContadorRepository;
 import pe.edu.upc.serviceinterfeaces.IContadorInterfaces;
 
@@ -60,6 +62,26 @@ public class ContadorImpl implements IContadorInterfaces{
 	public List<contador> searchUsu(String nombreUsuario) {
 		// TODO Auto-generated method stub
 		return cR.BuscarUsuario(nombreUsuario);
+	}
+
+	@Override
+	public List<contador> ordenarDesc() {
+		// TODO Auto-generated method stub
+		return cR.ordenarDesc();
+	}
+
+	@Override
+	public List<respuesta> cantidadContadores() {
+		List<respuesta>lista=new ArrayList<>();
+		cR.cantidadContadores().forEach(y->{
+			respuesta r=new respuesta();
+			r.setUsuario(y[0]);
+			r.setCantidad(y[1]);
+			lista.add(r);
+		}
+		);
+		// TODO Auto-generated method stub
+		return lista;
 	}
 	
 }
