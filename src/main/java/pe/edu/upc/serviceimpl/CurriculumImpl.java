@@ -80,7 +80,7 @@ public class CurriculumImpl implements ICurriculumService {
         List<respuestaCu>lista=new ArrayList<>();
         dCurriculum.cantidadCurriculum().forEach(y->{
                 respuestaCu r=new respuestaCu();
-                r.setCurriculum(y[0]);
+                r.setCapacitacion(y[0]);
                 r.setCantidad(y[1]);
                 lista.add(r);
         }
