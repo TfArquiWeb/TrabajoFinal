@@ -12,7 +12,7 @@ import javax.persistence.Table;
 public class tipopago {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idTP;
 	@Column(name = "tipopago")
 	private String Tipopago;
 	public tipopago() {
@@ -21,14 +21,14 @@ public class tipopago {
 	}
 	public tipopago(Long id, String tipopago) {
 		super();
-		this.id = id;
+		this.idTP = id;
 		Tipopago = tipopago;
 	}
 	public Long getId() {
-		return id;
+		return idTP;
 	}
 	public void setId(Long id) {
-		this.id = id;
+		this.idTP = id;
 	}
 	public String getTipopago() {
 		return Tipopago;

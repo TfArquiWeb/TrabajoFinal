@@ -11,7 +11,7 @@ import javax.persistence.Table;
 public class tipomoneda {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+	private Long idtipomoneda;
 	@Column(name = "TipodeMoneda", nullable = false, length = 45)
 	private String TipodeMoneda;
 	public tipomoneda() {
@@ -20,14 +20,14 @@ public class tipomoneda {
 	}
 	public tipomoneda(Long id, String tipodeMoneda) {
 		super();
-		this.id = id;
+		this.idtipomoneda = id;
 		TipodeMoneda = tipodeMoneda;
 	}
 	public Long getId() {
-		return id;
+		return idtipomoneda;
 	}
 	public void setId(Long id) {
-		this.id = id;
+		this.idtipomoneda = id;
 	}
 	public String getTipodeMoneda() {
 		return TipodeMoneda;

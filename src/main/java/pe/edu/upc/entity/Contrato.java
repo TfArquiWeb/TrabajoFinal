@@ -54,12 +54,14 @@ public class Contrato implements Serializable {
     @JoinColumn(name = "idCurriculum", nullable = false)
     private curriculumVitae curriculumVitae;*/
 
-    public Contrato(int idContrato, String fechainiContrato, String fechafinContrato, Integer montoContrato, usuario usuario, tipomoneda tipomoneda, tipopago tipopago/*,curriculumVitae curriculumVitae*/ ){
+    public Contrato(int idContrato, String fechainiContrato, String fechafinContrato, Integer montoContrato, usuario usuario, tipomoneda tipomoneda, tipopago tipopago /*,curriculumVitae curriculumVitae*/ ){
         this.idContrato = idContrato;
         this.fechainiContrato = fechainiContrato;
         this.fechafinContrato = fechafinContrato;
         this.montoContrato = montoContrato;
         this.usuario = usuario;
+        this.tipomoneda = tipomoneda;
+        this.tipopago = tipopago;
     }
 
     public Contrato() {

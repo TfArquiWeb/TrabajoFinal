@@ -46,9 +46,13 @@ public class ContratoImpl implements IContratoInterfaces {
         return dContrato.findByUsuario(nombreUsuario);
     }
 
-   /* public List<Contrato> findByTipodeMoneda(String TipodeMoneda) {
-        return dContrato.BuscarTipodeMoneda(TipodeMoneda);
-    }*/
+   public List<Contrato> findByTipodeMoneda(String TipodeMoneda) {
+        return dContrato.findByTipodeMoneda(TipodeMoneda);
+    }
+
+    public List<Contrato> findByTipopago(String tipopago) {
+        return dContrato.findByTipopago(tipopago);
+    }
 
 }
 
