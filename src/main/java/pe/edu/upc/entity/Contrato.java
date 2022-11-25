@@ -21,7 +21,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "Contrato")
 public class Contrato implements Serializable {
-    private static final long serialVersionUID = 1L;
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -54,12 +54,15 @@ public class Contrato implements Serializable {
     @JoinColumn(name = "idCurriculum", nullable = false)
     private curriculumVitae curriculumVitae;*/
 
-    public Contrato(int idContrato, String fechainiContrato, String fechafinContrato, Integer montoContrato, usuario usuario, tipomoneda tipomoneda, tipopago tipopago/*,curriculumVitae curriculumVitae*/ ){
+    public Contrato(int idContrato, String fechainiContrato, String fechafinContrato, Integer montoContrato, pe.edu.upc.entity.usuario usuario, pe.edu.upc.entity.tipomoneda tipomoneda, pe.edu.upc.entity.tipopago tipopago /*,curriculumVitae curriculumVitae*/ ){
+        super();
         this.idContrato = idContrato;
         this.fechainiContrato = fechainiContrato;
         this.fechafinContrato = fechafinContrato;
         this.montoContrato = montoContrato;
         this.usuario = usuario;
+        this.tipomoneda = tipomoneda;
+        this.tipopago = tipopago;
     }
 
     public Contrato() {

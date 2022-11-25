@@ -3,21 +3,22 @@ package pe.edu.upc.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Repository;
-import pe.edu.upc.entity.Empresario;
+import pe.edu.upc.entity.empresario;
 
 import java.util.List;
 
-@Repository
-public interface IEmpresarioRepository extends JpaRepository<Empresario,Integer> {
-    @Query("from Empresario e where e.usuario.dniUsuario like %:nombreUsuario%")
-    List<Empresario> buscarUsuario(@Param("nombreUsuario") String nombreUsuario);
+public interface IEmpresarioRepository extends JpaRepository<empresario, Integer> {
+    @Query("from empresario e where e.descEmpresario like %:descEmpresario%")
+    List<empresario> Buscardesc(@Param("descEmpresario")String descEmpresario);
 
-    @Query("from Empresario e where e.razonEmpresario like %:razonEmpresario%")
-    List<Empresario> buscarEmpresario(@Param("razonEmpresario") String razonEmpresario);
 
-    List<Empresario> findByRucEmpresario(int rucEmpresario);
+    @Query("from empresario e where e.usuario.nombreUsuario like %:nombreUsuario")
+    List<empresario> BuscarUsuario(@Param("nombreUsuario")String nombreUsuario);
+
+    @Query(value="Select * from empresario order by id desc",nativeQuery = true)
+    List<empresario>ordenarDesc();
+
+    @Query(value="select u.nombre_usuario,count(e.id)from empresario e inner join usuario u on e.usuario=u.id group by u.nombre_usuario  order by u.nombre_usuario asc",nativeQuery = true)
+    List<String[]>cantidadEmpresarios();
 }
-
-
 

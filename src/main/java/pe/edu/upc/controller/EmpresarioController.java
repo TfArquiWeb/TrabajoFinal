@@ -1,54 +1,56 @@
 package pe.edu.upc.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import pe.edu.upc.entity.Empresario;
-import pe.edu.upc.serviceinterfeaces.IEmpresarioService;
+import pe.edu.upc.entity.empresario;
+import pe.edu.upc.entity.respuestaEMP;
+import pe.edu.upc.serviceimpl.EmpresarionImpl;
 
 import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/empresario")
+@RequestMapping("/Empresario")
 public class EmpresarioController {
     @Autowired
-    private IEmpresarioService empService;
-
+    private EmpresarionImpl eService;
     @PostMapping
-    public void registrar(@RequestBody Empresario emp) {empService.insertar(emp);
+    public void registrar(@RequestBody empresario p) {
+        eService.insert(p);
     }
-
-    @PutMapping
-    public void modificar(@RequestBody Empresario emp) {
-        empService.insertar(emp);
-    }
-
-    @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable("id") Integer ide) {
-        empService.eliminar(ide);
-    }
-
     @GetMapping
-    public List<Empresario> listar() {
-        return empService.listar();
-
+    public List<empresario> listar() {
+        return eService.list();
     }
-
-    @PostMapping("/buscar")
-    public List<Empresario> buscar(@RequestBody Empresario emp) throws ParseException {
-
-        List<Empresario> listaEmpresarios;
-        listaEmpresarios = empService.buscarEmpresario(emp.getRazonEmpresario());
-        if (listaEmpresarios.isEmpty()) {
-
-            listaEmpresarios = empService.buscarEmpresario(emp.getUsuario().getNombreUsuario());
-        }
-        return listaEmpresarios;
-
+    @DeleteMapping("/{id}")
+    public void eliminar(@PathVariable("id") Integer id){
+        eService.delet(id);
+    }
+    @PutMapping
+    public void modificar(@RequestBody empresario e) {
+        eService.insert(e);
+    }
+    @PostMapping("/buscardesc")
+    public List<empresario> Buscardesc(@RequestBody String c ) throws ParseException {
+        return eService.searchdesc(c);
+    }
+    @PostMapping("/buscarusu")
+    public List<empresario> BuscarUsuario(@RequestBody String c )throws ParseException {
+        return eService.searchUsu(c);
+    }
+    @GetMapping("/ordenardesc")
+    public List<empresario> ordenarDesc() throws ParseException {
+        return eService.ordenarDesc();
     }
     @GetMapping("/{id}")
-    public Optional<Empresario> listarId(@PathVariable("id") Integer ide) {
-        return empService.listarId(ide);
+    public Optional<empresario> listarId(@PathVariable("id") Integer id) {
+        return eService.listarId(id);
     }
+    @GetMapping("/cantidad")
+    public List<respuestaEMP> cantidadEmpresarios() throws ParseException {
+        return eService.cantidadEmpresarios();
+    }
+
 }
