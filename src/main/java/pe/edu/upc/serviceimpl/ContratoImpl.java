@@ -1,7 +1,7 @@
 package pe.edu.upc.serviceimpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RestController;
 import pe.edu.upc.entity.Contrato;
 import pe.edu.upc.repository.IContratoRepository;
 import pe.edu.upc.serviceinterfeaces.IContratoInterfaces;
@@ -9,7 +9,7 @@ import pe.edu.upc.serviceinterfeaces.IContratoInterfaces;
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
-@Service
+@RestController
 public class ContratoImpl implements IContratoInterfaces {
     @Autowired
     private IContratoRepository dContrato;
@@ -42,17 +42,17 @@ public class ContratoImpl implements IContratoInterfaces {
     }
 
     @Override
-    public List<Contrato> findByUsuario(String nombreUsuario){
-        return dContrato.findByUsuario(nombreUsuario);
+    public List<Contrato> BuscarUsuario(String nombreUsuario){
+        return dContrato.BuscarUsuario(nombreUsuario);
     }
 
+    @Override
    public List<Contrato> findByTipodeMoneda(String TipodeMoneda) {
         return dContrato.findByTipodeMoneda(TipodeMoneda);
     }
-
     public List<Contrato> findByTipopago(String tipopago) {
         return dContrato.findByTipopago(tipopago);
     }
 
-}
+    }
 

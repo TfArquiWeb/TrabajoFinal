@@ -14,7 +14,8 @@ public interface IContratoInterfaces {
 
     List<Contrato> listar();
 
-    List<Contrato> findByUsuario(String nombreUsuario);
+    List<Contrato> BuscarUsuario(String nombreUsuario);
+
     List<Contrato> findByTipodeMoneda(String TipodeMoneda);
     List<Contrato> findByTipopago(String tipopago);
 }
