@@ -3,11 +3,10 @@ package pe.edu.upc.serviceimpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RestController;
-import pe.edu.upc.entity.Capacitacion;
 import pe.edu.upc.entity.respuestaCu;
 import pe.edu.upc.repository.ICurriculumRepository;
 import pe.edu.upc.serviceinterfeaces.ICurriculumService;
-import pe.edu.upc.entity.Curriculum;
+import pe.edu.upc.entity.curriculum;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,9 +20,9 @@ public class CurriculumImpl implements ICurriculumService {
 
     @Override
     @Transactional
-    public boolean insert(Curriculum c) {
+    public boolean insert(curriculum c) {
     // TODO Auto-generated method stub
-        Curriculum objcurriculum = dCurriculum.save(c);
+        curriculum objcurriculum = dCurriculum.save(c);
 		if (objcurriculum==null) {
         return false;
     }else
@@ -35,43 +34,43 @@ public class CurriculumImpl implements ICurriculumService {
     @Transactional
     public void delete(int id) { dCurriculum.deleteById(id);}
     @Override
-    public List<Curriculum> list() {
+    public List<curriculum> list() {
         return dCurriculum.findAll();
     }
 
     @Override
-    public Optional<Curriculum> listarId(int id) {
+    public Optional<curriculum> listarId(int id) {
         return dCurriculum.findById(id);
     }
 
-    public List<Curriculum> searchdescCapacitacion(String descCapacitacion) {
+    public List<curriculum> searchdescCapacitacion(String descCapacitacion) {
         // TODO Auto-generated method stub
         return dCurriculum.BuscardescCapacitacion(descCapacitacion);
     }
-    public List<Curriculum> searchdescExperiencia(String descExperiencia) {
+    public List<curriculum> searchdescExperiencia(String descExperiencia) {
         // TODO Auto-generated method stub
         return dCurriculum.BuscardescExperiencia(descExperiencia);
     }
-    public List<Curriculum> searchdescHabilidad(String descHabilidad) {
+    public List<curriculum> searchdescHabilidad(String descHabilidad) {
         // TODO Auto-generated method stub
         return dCurriculum.BuscardescHabilidad(descHabilidad);
     }
 
     @Override
-    public List<Curriculum> searchCapacitacion(String descCapacitacion) {
+    public List<curriculum> searchCapacitacion(String descCapacitacion) {
         return dCurriculum.BuscarCapacitacion(descCapacitacion);
     }
     @Override
-    public List<Curriculum> searchExperiencia(String descExperiencia) {
+    public List<curriculum> searchExperiencia(String descExperiencia) {
         return dCurriculum.BuscarExperiencia(descExperiencia);
     }
     @Override
-    public List<Curriculum> searchHabilidad(String descHabilidad) {
+    public List<curriculum> searchHabilidad(String descHabilidad) {
         return dCurriculum.BuscarHabilidad(descHabilidad);
     }
 
     @Override
-    public List<Curriculum> ordenarDesc() {
+    public List<curriculum> ordenarDesc() {
         // TODO Auto-generated method stub
         return dCurriculum.ordenarDesc();
     }
